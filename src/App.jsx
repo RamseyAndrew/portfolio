@@ -20,17 +20,19 @@ function App() {
     <div className={`min-h-screen font-sans antialiased transition-colors duration-500 ${
       darkMode 
         ? 'bg-gray-950 text-gray-100' 
-        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+        : 'bg-gradient-to-br from-pink-200 to-purple-300 text-gray-900'
     }`}>
       
       {/* Theme Toggle */}
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className={`fixed top-6 right-6 z-50 p-4 rounded-full backdrop-blur-xl border transition-all duration-300 ${
-          darkMode
-            ? 'bg-white/10 border-white/20 hover:bg-white/20'
-            : 'bg-black/10 border-black/20 hover:bg-black/20'
-        }`}
+        style={{
+          backdropFilter: 'blur(16px) saturate(160%)',
+          WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+          backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.5)' : 'rgba(255, 255, 255, 0.2)',
+          border: darkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(99, 102, 241, 0.3)'
+        }}
+        className="fixed top-6 right-6 z-50 p-4 rounded-full transition-all duration-300"
       >
         {darkMode ? <MdLightMode className="text-2xl" /> : <MdDarkMode className="text-2xl" />}
       </button>
@@ -44,7 +46,7 @@ function App() {
 
         <div className="container mx-auto px-6 py-20 md:py-32 text-center relative z-10">
           {/* Profile Pic */}
-          <div className={`group mx-auto w-48 h-48 md:w-64 md:h-64 rounded-[42%_58%_70%_30%] overflow-hidden border mb-10 transition-all duration-700 hover:scale-110 hover:rotate-1 ${
+          <div className={`group mx-auto w-48 h-48 md:w-64 md:h-64 rounded-[20%] overflow-hidden border mb-10 transition-all duration-700 hover:scale-110 hover:rotate-1 ${
             darkMode
               ? 'border-indigo-400/30 shadow-[0_0_80px_rgba(99,102,241,0.35)]'
               : 'border-indigo-300/50 shadow-[0_0_60px_rgba(99,102,241,0.25)]'
@@ -86,12 +88,15 @@ function App() {
               Get in Touch
             </a>
             <a
-              href="#"
-              className={`inline-flex items-center gap-2 px-10 py-5 text-xl font-semibold rounded-full backdrop-blur-xl border transition-all duration-500 hover:scale-110 ${
-                darkMode
-                  ? 'bg-white/10 border-white/20 hover:bg-white/20'
-                  : 'bg-white/60 border-indigo-200 hover:bg-white/80'
-              }`}>
+              href="/Ramsey_Anyona_Resume.pdf"
+              download
+              style={{
+                backdropFilter: 'blur(16px) saturate(160%)',
+                WebkitBackdropFilter: 'blur(16px) saturate(160%)',
+                backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.42)' : 'rgba(255, 255, 255, 0.42)',
+                border: darkMode ? '1px solid rgba(255, 255, 255, 0.125)' : '1px solid rgba(99, 102, 241, 0.3)'
+              }}
+              className="inline-flex items-center gap-2 px-10 py-5 text-xl font-semibold rounded-full transition-all duration-500 hover:scale-110">
               <FaDownload /> Resume
             </a>
           </div>
@@ -122,7 +127,7 @@ function App() {
 
       {/* Skills */}
       <section className={`py-20 px-6 ${
-        darkMode ? 'bg-gray-900/50' : 'bg-white/30 backdrop-blur-sm'
+        darkMode ? 'bg-gray-900/60' : 'bg-blue/30 backdrop-blur-sm'
       }`}>
         <h2 className={`text-4xl md:text-5xl font-bold text-center mb-12 ${
           darkMode ? 'text-indigo-400' : 'text-indigo-600'
@@ -143,11 +148,13 @@ function App() {
           ].map((skill) => (
             <div 
               key={skill.name}
-              className={`relative p-6 rounded-xl border shadow-lg transition-all duration-500 hover:scale-110 text-center font-semibold flex flex-col items-center gap-3 ${
-                darkMode
-                  ? 'bg-gray-800/30 backdrop-blur-xl border-indigo-400/20 hover:border-indigo-400/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]'
-                  : 'bg-white/60backdrop-blur-xl border-indigo-200 hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]'
-              }`}>
+              style={{
+                backdropFilter: 'blur(16px) saturate(120%)',
+                WebkitBackdropFilter: 'blur(16px) saturate(140%)',
+                backgroundColor: darkMode ? 'rgba(47, 58, 78, 0.01)' : 'rgba(255, 255, 255, 0.1',
+                border: darkMode ? '1px solid rgba(255, 255, 255, 0.25)' : '1px solid rgba(99, 102, 241, 0.25)'
+              }}
+              className="relative p-6 rounded-xl shadow-lg transition-all duration-500 hover:scale-110 text-center font-semibold flex flex-col items-center gap-3">
               <span className={darkMode ? 'text-4xl text-indigo-400' : 'text-4xl text-indigo-600'}>{skill.icon}</span>
               <span className="text-sm">{skill.name}</span>
             </div>
@@ -162,11 +169,14 @@ function App() {
         }`}>Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           
-          <div className={`rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-105 border ${
-            darkMode
-              ? 'bg-gray-800/60 backdrop-blur-xl border-gray-700/50 hover:shadow-indigo-500/30'
-              : 'bg-white/60 backdrop-blur-xl border-indigo-200 hover:shadow-indigo-400/30'
-          }`}>
+          <div 
+            style={{
+              backdropFilter: 'blur(16px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(16px) saturate(184%)',
+              backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.1)' : 'rgba(255, 255, 255, 0.3)',
+              border: darkMode ? '1px solid rgba(255, 255, 255, 0.125)' : '1px solid rgba(99, 102, 241, 0.3)'
+            }}
+            className="rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-105">
             <div className="h-48 bg-gradient-to-br from-purple-600 to-indigo-600 relative">
               {!imageLoaded.pata && (
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-indigo-400/20 animate-pulse" />
@@ -211,11 +221,14 @@ function App() {
             </div>
           </div>
 
-          <div className={`rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-105 border ${
-            darkMode
-              ? 'bg-gray-800/60 backdrop-blur-xl border-gray-700/50 hover:shadow-indigo-500/30'
-              : 'bg-white/60 backdrop-blur-xl border-indigo-200 hover:shadow-indigo-400/30'
-          }`}>
+          <div 
+            style={{
+              backdropFilter: 'blur(16px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(16px) saturate(184%)',
+              backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.1)' : 'rgba(255, 255, 255, 0.3)',
+              border: darkMode ? '1px solid rgba(255, 255, 255, 0.125)' : '1px solid rgba(99, 102, 241, 0.3)'
+            }}
+            className="rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:scale-105">
             <div className="h-48 bg-gradient-to-br from-blue-600 to-cyan-600 relative">
               {!imageLoaded.tictac && (
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 animate-pulse" />
@@ -274,11 +287,13 @@ function App() {
           <div className="flex flex-wrap justify-center gap-6">
             <a
               href="mailto:your.anti.xe17@gmail.com"
-              className={`flex items-center gap-3 px-8 py-4 rounded-2xl backdrop-blur-xl border transition-all duration-300 hover:scale-105 ${
-                darkMode
-                  ? 'bg-white/10 border-white/20 hover:bg-white/20'
-                  : 'bg-white/60 border-indigo-200 hover:bg-white/80'
-              }`}>
+              style={{
+                 backdropFilter: 'blur(16px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(16px) saturate(184%)',
+              backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.1)' : 'rgba(255, 255, 255, 0.3)',
+              border: darkMode ? '1px solid rgba(255, 255, 255, 0.125)' : '1px solid rgba(99, 102, 241, 0.3)'
+              }}
+              className="flex items-center gap-3 px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105">
               <MdEmail className="text-2xl" />
               <span className="font-medium">Email</span>
             </a>
@@ -286,11 +301,13 @@ function App() {
               href="https://github.com/RamseyAndrew"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-3 px-8 py-4 rounded-2xl backdrop-blur-xl border transition-all duration-300 hover:scale-105 ${
-                darkMode
-                  ? 'bg-white/10 border-white/20 hover:bg-white/20'
-                  : 'bg-white/60 border-indigo-200 hover:bg-white/80'
-              }`}>
+              style={{
+                backdropFilter: 'blur(16px) saturate(184%)',
+                WebkitBackdropFilter: 'blur(16px) saturate(184%)',
+                backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.42)' : 'rgba(255, 255, 255, 0.42)',
+                border: darkMode ? '1px solid rgba(255, 255, 255, 0.125)' : '1px solid rgba(99, 102, 241, 0.3)'
+              }}
+              className="flex items-center gap-3 px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105">
               <FaGithub className="text-2xl" />
               <span className="font-medium">GitHub</span>
             </a>
@@ -298,11 +315,13 @@ function App() {
               href="https://linkedin.com/in/ramsey-anyona"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-3 px-8 py-4 rounded-2xl backdrop-blur-xl border transition-all duration-300 hover:scale-105 ${
-                darkMode
-                  ? 'bg-white/10 border-white/20 hover:bg-white/20'
-                  : 'bg-white/60 border-indigo-200 hover:bg-white/80'
-              }`}>
+              style={{
+                backdropFilter: 'blur(16px) saturate(184%)',
+                WebkitBackdropFilter: 'blur(16px) saturate(184%)',
+                backgroundColor: darkMode ? 'rgba(17, 25, 40, 0.42)' : 'rgba(255, 255, 255, 0.42)',
+                border: darkMode ? '1px solid rgba(255, 255, 255, 0.125)' : '1px solid rgba(99, 102, 241, 0.3)'
+              }}
+              className="flex items-center gap-3 px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105">
               <FaLinkedin className="text-2xl" />
               <span className="font-medium">LinkedIn</span>
             </a>
