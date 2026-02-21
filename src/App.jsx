@@ -83,7 +83,7 @@ function App() {
               Get in Touch
             </a>
             <a
-              href="/Ramsey_Anyona_Resume.pdf"
+              href="/Ramsey_Anyona_CV.pdf"
               download
               style={{
                 backdropFilter: 'blur(16px) saturate(160%)',
