@@ -197,7 +197,7 @@ function App() {
                   }`}>
                   Live Demo →
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 font-medium hover:underline ${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'
+                <a href="https://github.com/RamseyAndrew/pata-mtaani" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 font-medium hover:underline ${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'
                   }`}>
                   <HiCode /> Code
                 </a>
@@ -241,7 +241,7 @@ function App() {
                   }`}>
                   Live Demo →
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 font-medium hover:underline ${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'
+                <a href="https://github.com/RamseyAndrew/tic-tac-toe" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 font-medium hover:underline ${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'
                   }`}>
                   <HiCode /> Code
                 </a>
@@ -289,7 +289,7 @@ function App() {
                   }`}>
                   Live Demo →
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 font-medium hover:underline ${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'
+                <a href="https://github.com/RamseyAndrew/BerryO" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 font-medium hover:underline ${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'
                   }`}>
                   <HiCode /> Code
                 </a>
